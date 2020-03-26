@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <br>
+  <div class="alert alert-warning" *ngIf="desc.invalid">
+    Enter valid Description
+  </div>
+  <form (ngSubmit)="!todoForm.invalid && saveTodo()" #todoForm="ngForm">
+    <h3>Todo</h3>
+    <div class="form-group">
+      <label for="description"><b>Description</b></label>
+      <input type="text" id="description" [(ngModel)]="todo.description" name="description"
+        class="form-control" minlength="5" #desc="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="targetDate"><b>Target Date</b></label>
+      <input type="date" id="targetDate" [(ngModel)]="todo.targetDate" name="targetDate" required class="form-control"
+        #targetDate="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="done"><b>IsCompleted? </b></label>
+      <input type="text" id="done" [(ngModel)]="todo.done" name="done" class="form-control" required>
+    </div>
+    <!-- <div class="form-group">
+      <select class="form-control" id="done" name="done" required>
+        <option [(ngModel)]="todo.done" name="done1" class="form-control" *ngIf="todo.done == false">No</option>
+        <option [(ngModel)]="todo.done" name="done2" class="form-control" *ngIf="todo.done == true">Yes
+        </option>
+      </select>
+    </div> -->
+    <button type="submit" class="btn btn-success">Save</button>
+  </form>
+</div>

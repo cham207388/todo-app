@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <div>
+    <p>{{pathVariable}} {{welcomeMessage}}</p>
+  </div>
+  <div>
+    <a routerLink='/todos'>Manage Todo's</a>
+  </div>
+  <div>
+    <p>Click for customise welcome messege</p>
+    <button class="btn btn-outline-primary" (click)="getWelComeMessage('baicham')">Welcome Message</button>
+  </div>
+  <div>
+    <h4 *ngIf='called'>The message from calling backend is: {{message}}</h4>
+  </div>
+</div>
